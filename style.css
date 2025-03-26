@@ -101,16 +101,25 @@ body {
 .home-content h1 {
     font-size: 50px;
     line-height: 1.2;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
 }
 
 .home-content h3 {
     font-size: 40px;
     color: blue;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.3s;
 }
 
 .home-content p {
     font-size: 16px;
     margin: 15px 0 30px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .btn {
@@ -126,6 +135,9 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: 0.4s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: 2s;
 }
 
 .btn:hover {
@@ -148,6 +160,9 @@ body {
     background-color: #eaeaea;
     border: 20px solid blue;
     box-shadow: -15px 15px 15px rgba(0, 0, 0, .3);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .home-img .royce img {
@@ -156,6 +171,9 @@ body {
     left: -250px;
     width: 750px;
     transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 2s;
 }
 
 .home .royce2 {
@@ -167,11 +185,25 @@ body {
     background-color: blue;
     transform: rotate(45deg);
     z-index: -1;
+    opacity: 0;
+    animation: royce2 1s ease forwards;
 }
 
 @keyframes slideRight {
     from {
         transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(100px);
         opacity: 0;
     }
 
@@ -193,6 +225,18 @@ body {
     }
 }
 
+@keyframes slideBottom {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @keyframes slideSci {
     from {
         transform: translateX(100px) rotate(45deg);
@@ -201,6 +245,42 @@ body {
 
     to {
         transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes car {
+    from {
+        transform: translate(300px, -300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes royce2 {
+    from {
+        right: -40%;
+        opacity: 0;
+    }
+
+    to {
+        right: -25%;
         opacity: 1;
     }
 }

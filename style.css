@@ -285,7 +285,6 @@ body {
     }
 }
 
-/* Responsive Design */
 @media screen and (max-width: 1200px) {
     .home-img {
         width: 400px;
